@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+// 関数定義
+$font_family: Quicksand, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; // 文字フォント
+$body_bg: #fff; // 全体背景色
+$max_width: 1000px; // メイン幅
+$header_bg: #0A192F; // ヘッダー背景色
+
+
+// インポート
+@import 'reset';
+@import 'instant';
+@import 'animation';
+.header{
+  background: $header_bg;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  z-index: 2;
+}
+.title{
+  display: none;
+}
+.nav{
+  @extend %lay;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  li{
+    margin-left: 30px;
+    list-style: none;
+  }
+  i{
+    color: #fff;
+    font-size: 30px;
+  }
+  a{
+    display: inline-block;
+  }
+  a:hover i{
+    color: #64ffda;
+    transform: translateY(-3px);
+    transition: all 0.5s;
+  }
+}
+.main{
+  height: 100vh;
+  width: 100vw;
+  padding: 70px 20px 0;
+}
+.fbox{
+  @extend %lay;
+  @extend %fbox;
+  @extend %a-center;
+  @extend %j-between;
+  height: 100%;
+}
+.fbox-img{
+  width: calc(40% - 30px);
+  margin-right: 30px;
+}
+.fbox-pg{
+  width: 60%;
+  h3{
+    height: 1.5em;
+    vertical-align: top;
+    overflow-y: hidden;
+  }
+  span{
+    color: #8892B0;
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    animation: ShiftText 10s linear infinite;
+  }
+  h2{
+    border-bottom: 2px solid #8892B0;
+    color: #555555;
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding: 10px 0 20px;
+  }
+}
+.sns{
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  li{
+    list-style: none;
+    margin: 0 10px;
+  }
+  a{
+    color: #444;
+  }
+  i{
+    font-size: 30px;
+  }
+  a:hover i{
+    color: #64ffda;
+    transform: translateY(-3px);
+    transition: all 0.5s;
+  }
+}
+.fbox-works{
+  margin-bottom: 20px;
+  width: 48%;
+}
+/* /////////////////////////////////// */
+@media screen and (max-width: 787px) {
+  .fbox-img{
+    position: absolute;
+    top: 37%;
+    right: 0;
+    margin-right: 0;
+    transform: translateY(-50%);
+  }
+  .fbox-pg{
+    width: 100%;
+    z-index: 1;
+  }
+  .fbox-works{
+    width: 100%;
+  }
+}

@@ -1,0 +1,53 @@
+@charset "UTF-8";
+// 基準CSS
+body{
+  font-family: $font_family;
+  background: $body_bg;
+}
+div{
+  box-sizing: border-box;
+}
+img{
+  height: auto;
+  width: 100%;
+  vertical-align: bottom;
+}
+p{
+  letter-spacing: .5px;
+}
+a{
+  cursor: pointer;
+}
+// 継承用
+%lay{
+  position: relative;
+  width: 100%;
+  max-width: $max_width;
+  margin: auto;
+}
+%fbox{
+  display: flex;
+  flex-wrap: wrap;
+}
+%a-center{
+  align-items: center;
+}
+%j-center{
+  justify-content: center;
+}
+%j-between{
+  justify-content: space-between;
+}
+%nowrap{
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+%ab-center{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 100%;
+}

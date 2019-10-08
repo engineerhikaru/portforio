@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@keyframes ShiftText{
+  0%{
+    opacity: 0;
+  }
+  1%,25%{
+    top: 0;
+    opacity: 1;
+  }
+  26%,50%{
+    top: -1.5em;
+  }
+  51%,75%{
+    top: -3em;
+  }
+  76%,100%{
+    top: -4.5em;
+  }
+}
